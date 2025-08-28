@@ -33,6 +33,8 @@ jQuery(document).ready(function($){
                     alert(resp.data.message);
                 }
                 $form[0].reset();
+                $('#ri-cf-response').html('<p>' + resp.data.message + '</p>');
+                $('#ri-cf-form').remove(); // remove form after submit
             } else {
                 var msg = (resp && resp.data && resp.data.message) ? resp.data.message : 'Submission failed.';
                 if (typeof Swal !== 'undefined') {
